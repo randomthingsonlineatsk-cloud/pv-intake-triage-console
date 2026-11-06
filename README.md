@@ -17,6 +17,9 @@ Adverse-event intake and triage workflow demo for pharmacovigilance.
 ## Tech stack
 TanStack Start, React, Tailwind CSS, Convex (database, auth, scheduled jobs). Built on Macaly Cloud.
 
+## About this repository
+This is a **source backup** of the app as it runs on Macaly Cloud. The live demo stays on Macaly. The repository holds the app's own code (routes, Convex backend, tests, theme). It leaves out secrets (`.env.local`), Convex's generated files, the generic shadcn/ui component files, and Macaly-specific tooling. To run it yourself you would need to regenerate those with the shadcn CLI and `npx convex dev`, create your own Convex project, and set an email endpoint for the OTP sign-in and alerts (`OTP_ENDPOINT`, `EMAIL_NOTIFICATION_ENDPOINT`). The Macaly bridge package (`@macaly/bridge`) in `src/routes/__root.tsx` and `vite.config.ts` would need to be removed.
+
 > The live demo's database and email features may differ from what you run yourself; you would need to set up your own Convex project and email provider.
 
 ## Attribution

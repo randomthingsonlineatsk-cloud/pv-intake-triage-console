@@ -1,0 +1,14 @@
+{
+  "default": {
+    "title": "PV Intake & Triage Console",
+    "description": "Submit and triage adverse event reports with automated seriousness, expectedness, and expedited-reporting classification, real task creation, and real email alerting."
+  },
+  "/": {
+    "title": "Report an Adverse Event — PV Intake Console",
+    "description": "Submit an adverse event report. Seriousness, expectedness, and expedited-reporting status are classified automatically on submission."
+  },
+  "/dashboard": {
+    "title": "Dashboard — PV Intake Console",
+    "description": "Triage queue of adverse event reports, open tasks, and alert delivery status."
+  }
+}

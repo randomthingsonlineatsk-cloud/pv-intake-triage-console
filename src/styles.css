@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Clean clinical-console palette: cool slate neutrals, one urgent (amber/red)
+   and one settled (teal) status color, used consistently for priority and
+   alert state across the intake form and dashboard. */
+:root {
+  --ink: 215 30% 14%;
+  --ink-soft: 215 16% 40%;
+  --paper: 210 20% 98%;
+  --card-bg: 0 0% 100%;
+  --line: 215 16% 88%;
+  --urgent: 6 78% 52%;
+  --urgent-soft: 6 90% 96%;
+  --routine: 172 45% 34%;
+  --routine-soft: 172 45% 95%;
+  --pending: 38 92% 50%;
+  --pending-soft: 38 92% 95%;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--card-bg);
+  --card-foreground: var(--ink);
+  --popover: var(--card-bg);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 16% 94%;
+  --secondary-foreground: var(--ink);
+  --muted: 215 16% 94%;
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--routine-soft);
+  --accent-foreground: var(--routine);
+  --destructive: var(--urgent);
+  --destructive-foreground: 0 0% 100%;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--routine);
+  --chart-1: var(--routine);
+  --chart-2: var(--urgent);
+  --chart-3: var(--pending);
+  --chart-4: 215 16% 60%;
+  --chart-5: 260 40% 55%;
+  --radius: 0.5rem;
+  --sidebar: var(--card-bg);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 215 16% 94%;
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--routine);
+}
+
+@theme inline {
+  --color-ink: hsl(var(--ink));
+  --color-ink-soft: hsl(var(--ink-soft));
+  --color-paper: hsl(var(--paper));
+  --color-urgent: hsl(var(--urgent));
+  --color-urgent-soft: hsl(var(--urgent-soft));
+  --color-routine: hsl(var(--routine));
+  --color-routine-soft: hsl(var(--routine-soft));
+  --color-pending: hsl(var(--pending));
+  --color-pending-soft: hsl(var(--pending-soft));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Hide Vite badge and error messages */
+body vite-error-overlay {
+  display: none;
+}
